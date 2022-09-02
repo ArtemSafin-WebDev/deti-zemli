@@ -1,0 +1,232 @@
+.news-slider {
+    padding: 18rem 0;
+}
+
+.news-slider__grid {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+    grid-gap: 2.4rem;
+    align-items: center;
+}
+
+.news-slider__wrapper {
+    grid-column: 1 / 10;
+    position: relative;
+
+    .swiper {
+        border-radius: 2.5rem;
+        overflow: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+}
+
+.news-slider__text-content {
+    grid-column: 11 / -1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &::before {
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100%;
+        width: 15.4rem;
+        height: 10rem;
+        margin-bottom: 4.7rem;
+        background-image: url('../img/news-birds-top.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        pointer-events: none;
+    }
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url('../img/news-bird-bottom.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 100%;
+        right: 16.8rem;
+        margin-top: -1rem;
+        pointer-events: none;
+        width: 10rem;
+        height: 13.5rem;
+    }
+}
+
+.news-slider__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5rem;
+    line-height: 5rem;
+    font-family: var(--philosopher);
+    margin-bottom: 4rem;
+
+    em {
+        font-style: normal;
+        color: var(--primary-color);
+    }
+}
+
+.news-slider__link {
+    align-self: flex-start;
+}
+
+.news-slider__card {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &::before {
+        content: '';
+        padding-bottom: 65%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.news-slider__card-image-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.news-slider__card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-slider__card-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6.5rem;
+}
+
+.news-slider__card-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5rem;
+    line-height: 5rem;
+    font-family: var(--philosopher);
+    margin-bottom: 6.5rem;
+    max-width: 45rem;
+
+  
+}
+
+.news-slider__card-link {
+    align-self: flex-start;
+}
+
+
+.news-slider__controls {
+    position: absolute;
+    left: 7.4rem;
+    bottom: 7.9rem;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    z-index: 50;
+}
+
+.news-slider__arrows {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.news-slider__arrow {
+    width: 4.8rem;
+    height: 4.8rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transition: background-color .2s, opacity .2s;
+    flex-shrink: 0;
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+    svg {
+        width: 0.9rem;
+        height: 1.8rem;
+        fill: #424242;
+        transition: fill .2s;
+    }
+
+    .no-touch &:not(.swiper-button-disabled):hover,
+    .touch &:not(.swiper-button-disabled):active {
+        background-color: var(--primary-color);
+        svg {
+            fill: white;
+        }
+    }
+}
+
+
+.news-slider__pagination {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    .swiper-pagination-bullet {
+        margin: 0;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.8);
+        transition: background-color .2s;
+        opacity: 1;
+        width: 0.7rem;
+        height: 0.7rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1.1rem;
+            height: 1.1rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: .2rem solid #FFFFFF;
+            transition: opacity .2s;
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+        &.swiper-pagination-bullet-active {
+            background: transparent;
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+    }
+}

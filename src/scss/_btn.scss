@@ -1,0 +1,62 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 2rem 3.2rem;
+    color: #ffffff;
+    border-radius: 4rem;
+    background-color: var(--primary-color);
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color .2s, color .2s;
+   
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        background-color: var(--primary-color-hover);
+    }
+
+    &--small {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        padding: 1.2rem 2rem;
+    }
+
+
+    &--grey {
+        background: #F6F6F6;
+        color: var(--text-color);
+        &:link,
+        &:visited {
+            color: var(--text-color);
+        }
+
+        &:hover {
+            background: rgb(235, 235, 235);
+        }
+    }
+
+    &--white {
+        background: #FFFFFF;
+        color: var(--text-color);
+        &:link,
+        &:visited {
+            color: var(--text-color);
+        }
+
+        &:hover {
+            background: rgb(221, 221, 221);
+        }
+    }
+}

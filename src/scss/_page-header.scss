@@ -1,0 +1,134 @@
+.page-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.page-header__row {
+    padding: 2.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.page-header__logo {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-shrink: 0;
+}
+
+.page-header__logo-image {
+    flex-shrink: 0;
+    width: 9.8rem;
+    height: auto;
+}
+
+.page-header__logo-content {
+}
+
+.page-header__logo-type {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    color: rgba(#424242, 0.6);
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.page-header__logo-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-family: var(--philosopher);
+    white-space: nowrap;
+}
+
+.page-header__menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.page-header__menu-nav {
+    flex-shrink: 0;
+    margin-right: 3.2rem;
+}
+
+.page-header__menu-nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+    row-gap: 1.6rem;
+}
+
+.page-header__menu-nav-link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__contacts {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 5rem;
+}
+
+.page-header__phone {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__email {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: rgba(#424242, 0.6);
+
+    &:link,
+    &:visited {
+        color: rgba(#424242, 0.6);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__btns {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.page-header__burger {
+    @include breakpointMF(small-tablet) {
+        display: none;
+    }
+}
