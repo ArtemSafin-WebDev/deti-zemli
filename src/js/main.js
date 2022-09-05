@@ -12,6 +12,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import newsSlider from './newsSlider';
 import products from './products';
+import newsBlockSlider from './newsBlockSlider';
+import productsSlider from './productsSlider';
+import clientHeight from './clientHeight.';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
     menu();
     newsSlider();
     products();
+    newsBlockSlider();
+    productsSlider();
+    clientHeight();
 });
 
 document.addEventListener('lazyloaded', () => {

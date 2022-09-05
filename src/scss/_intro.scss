@@ -1,6 +1,17 @@
 .intro {
     position: relative;
     z-index: 1;
+    .container {
+        @include breakpoint(mobile) {
+            display: contents;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: var(--client-height, 100vh) auto;
+    }
 }
 
 .intro__content {
@@ -10,22 +21,66 @@
     min-height: 100vh;
     min-height: min(100vh, 108rem);
     padding: 12rem 0;
+
+
+    @include breakpoint(mobile) {
+        min-height: 100vh;
+        padding: 4rem 0;
+        display: contents;
+    }
 }
 
 .intro__row {
-    display: grid;
-    grid-template-columns: repeat(16, minmax(0, 1fr));
-    grid-gap: 2.4rem;
+    
+
+
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
+
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 3rem;
+
+        display: contents;
+    }
 }
 
 .intro__text-content {
-    grid-column: 1 / 9;
-    z-index: 6;
+    
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 9;
+        z-index: 6;
+    }
+
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 5;
+        padding: 4rem var(--content-padding);
+        display: flex;
+        flex-direction: column;
+        padding-top: 12rem;
+    }
 }
 
 .intro__bg {
     position: absolute;
     inset: 0;
+    z-index: -1;
+
+    @include breakpoint(mobile) {
+        position: relative;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 1;
+    }
 }
 
 .intro__bg-image {
@@ -46,6 +101,15 @@
     margin-bottom: 5.5rem;
     font-family: var(--philosopher);
     text-transform: uppercase;
+
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+        font-weight: 400;
+        text-transform: none;
+    }
     em {
         font-style: normal;
         color: var(--primary-color);
@@ -53,13 +117,25 @@
 }
 
 .intro__form {
-    grid-column: 11 / 16;
+   
     background: #ffffff;
     border-radius: 2.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
     padding: 3.5rem 4rem;
+
+
+    @include breakpoint(mobile) {
+        padding: 2rem var(--content-padding);
+        border-radius: 2rem;
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 11 / 16;
+    }
 
     .parsley-errors-list.filled {
         margin-top: 0.5rem;
@@ -81,6 +157,12 @@
         transform: translateY(-50%);
         z-index: 2;
         pointer-events: none;
+
+        @include breakpoint(mobile) {
+            width: 8rem;
+            height: 8rem;
+            right: 2rem;
+        }
     }
 }
 
@@ -96,6 +178,11 @@
     margin-bottom: 5rem;
     position: relative;
     z-index: 1;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        margin-bottom: 2.5rem;
+    }
     &::before {
         content: '';
         height: 2rem;
@@ -110,6 +197,11 @@
         z-index: -1;
         pointer-events: none;
         user-select: none;
+
+
+        @include breakpoint(mobile) {
+            height: 1.3rem;
+        }
     }
 }
 
@@ -117,6 +209,11 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-bottom: 2.5rem;
+
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .intro__form-type-radio {
@@ -140,13 +237,30 @@
     display: block;
     width: 100%;
     cursor: pointer;
+
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        padding: 1rem;
+        line-height: 1.2;
+    }
     .intro__form-type-radio:nth-child(1) & {
         border-top-left-radius: 4rem;
         border-bottom-left-radius: 4rem;
+
+        @include breakpoint(mobile) {
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+        }
     }
     .intro__form-type-radio:nth-child(2) & {
         border-top-right-radius: 4rem;
         border-bottom-right-radius: 4rem;
+
+        @include breakpoint(mobile) {
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
     }
 }
 
@@ -161,12 +275,23 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+        gap: .8rem;
+        flex-wrap: wrap;
+    }
 }
 
 .intro__form-amount-checkbox {
     display: block;
     user-select: none;
     flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+    }
 }
 
 .intro__form-amount-checkbox-input {
@@ -186,6 +311,15 @@
     white-space: nowrap;
     display: block;
     text-align: center;
+
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        
+        line-height: 1.2;
+        padding: 0.8rem 1.4rem;
+      
+    }
 }
 
 .intro__form-amount-checkbox-input:checked ~ .intro__form-amount-checkbox-content {
@@ -199,6 +333,10 @@
     grid-template-columns: minmax(0, 1fr);
     grid-gap: 1.5rem;
     margin-bottom: 3.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .intro__form-input {
@@ -215,6 +353,12 @@
     display: block;
     width: 100%;
     padding: 0 2rem;
+
+
+    @include breakpoint(mobile) {
+        height: 5rem;
+        padding: 0 1.5rem;
+    }
     @include placeholder {
         color: rgba(#424242, 0.6);
     }
@@ -225,6 +369,12 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
 }
 
 .intro__form-submit {
@@ -242,6 +392,13 @@
     border-radius: 4rem;
     flex-shrink: 0;
     transition: color .2s, background-color .2s;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        padding: 1.3rem 2.2rem;
+        width: 100%;
+        order: 12;
+    }
 
     .no-touch &:hover,
     .touch &:active {
@@ -287,4 +444,11 @@
 
 .intro__form-policy-input:checked ~ .intro__form-policy-mark svg {
     opacity: 1;
+}
+
+
+.intro__link {
+    @include breakpoint(mobile) {
+        align-self: flex-start;
+    }
 }

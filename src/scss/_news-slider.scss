@@ -1,17 +1,36 @@
 .news-slider {
     padding: 18rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
 }
 
 .news-slider__grid {
-    display: grid;
-    grid-template-columns: repeat(16, minmax(0, 1fr));
-    grid-gap: 2.4rem;
-    align-items: center;
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+        align-items: center;
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 3rem;
+    }
 }
 
 .news-slider__wrapper {
-    grid-column: 1 / 10;
     position: relative;
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 10;
+    }
+
+    @include breakpoint(mobile) {
+        order: 12;
+    }
 
     .swiper {
         border-radius: 2.5rem;
@@ -22,10 +41,13 @@
 }
 
 .news-slider__text-content {
-    grid-column: 11 / -1;
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 11 / -1;
+    }
     &::before {
         content: '';
         left: 50%;
@@ -40,8 +62,11 @@
         background-position: center;
         position: absolute;
         pointer-events: none;
-    }
 
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
 
     &::after {
         content: '';
@@ -56,6 +81,9 @@
         pointer-events: none;
         width: 10rem;
         height: 13.5rem;
+        @include breakpoint(mobile) {
+            display: none;
+        }
     }
 }
 
@@ -66,6 +94,12 @@
     line-height: 5rem;
     font-family: var(--philosopher);
     margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3.2rem;
+        line-height: 1;
+        margin-bottom: 2rem;
+    }
 
     em {
         font-style: normal;
@@ -122,6 +156,10 @@
     flex-direction: column;
     justify-content: center;
     padding: 6.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+    }
 }
 
 .news-slider__card-title {
@@ -133,13 +171,16 @@
     margin-bottom: 6.5rem;
     max-width: 45rem;
 
-  
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
 }
 
 .news-slider__card-link {
     align-self: flex-start;
 }
-
 
 .news-slider__controls {
     position: absolute;
@@ -149,12 +190,20 @@
     align-items: center;
     gap: 3.5rem;
     z-index: 50;
+
+    @include breakpoint(mobile) {
+        position: static;
+        margin-top: 1.5rem;
+        // justify-content: space-between;
+    }
 }
 
 .news-slider__arrows {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+   
 }
 
 .news-slider__arrow {
@@ -164,10 +213,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 50%;
-    transition: background-color .2s, opacity .2s;
+    transition: background-color 0.2s, opacity 0.2s;
     flex-shrink: 0;
+
+
+    @include breakpoint(mobile) {
+        background-color: var(--primary-color);
+        width: 4rem;
+        height: 4rem;
+    }
 
     &.swiper-button-disabled {
         opacity: 0.5;
@@ -177,7 +233,13 @@
         width: 0.9rem;
         height: 1.8rem;
         fill: #424242;
-        transition: fill .2s;
+        transition: fill 0.2s;
+
+        @include breakpoint(mobile) {
+            fill: white;
+            width: 0.7rem;
+            height: 1.4rem;
+        }
     }
 
     .no-touch &:not(.swiper-button-disabled):hover,
@@ -189,22 +251,30 @@
     }
 }
 
-
 .news-slider__pagination {
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-shrink: 0;
     flex-wrap: wrap;
+    width: auto !important;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
     .swiper-pagination-bullet {
         margin: 0;
         flex-shrink: 0;
         background: rgba(255, 255, 255, 0.8);
-        transition: background-color .2s;
+        transition: background-color 0.2s;
         opacity: 1;
         width: 0.7rem;
         height: 0.7rem;
         position: relative;
+
+        @include breakpoint(mobile) {
+            background: rgba(0, 0, 0, 0.3);
+        }
 
         &::before {
             content: '';
@@ -214,10 +284,14 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            border: .2rem solid #FFFFFF;
-            transition: opacity .2s;
+            border: 0.2rem solid #ffffff;
+            transition: opacity 0.2s;
             opacity: 0;
             border-radius: 50%;
+
+            @include breakpoint(mobile) {
+                border: 0.2rem solid rgba(black, .3);
+            }
         }
 
         &.swiper-pagination-bullet-active {
@@ -227,6 +301,5 @@
                 opacity: 1;
             }
         }
-
     }
 }

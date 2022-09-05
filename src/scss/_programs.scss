@@ -3,6 +3,10 @@
     background-color: #f6f6f6;
     position: relative;
     z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
 }
 
 
@@ -18,15 +22,23 @@
 }
 
 .programs__grid {
-    display: grid;
-    grid-template-columns: repeat(16, minmax(0, 1fr));
-    grid-gap: 2.4rem;
+    
+
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
 }
 
 .programs__inner {
-    grid-column: 3 / 15;
+   
     display: flex;
     flex-direction: column;
+
+    @include breakpointMF(small-tablet) {
+        grid-column: 3 / 15;
+    }
 }
 
 .programs__heading {
@@ -42,6 +54,13 @@
     z-index: 1;
     margin-bottom: 8rem;
     align-self: flex-start;
+
+    @include breakpoint(mobile) {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+    }
     &::before {
         content: '';
         height: 2rem;
@@ -56,6 +75,9 @@
         z-index: -1;
         pointer-events: none;
         user-select: none;
+        @include breakpoint(mobile) {
+            height: 1.5rem;
+        }
     }
 }
 
@@ -63,6 +85,11 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 2.4rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1rem;
+    }
 }
 
 .programs__list-item {
@@ -84,6 +111,14 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     color: var(--text-color);
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        min-height: auto;
+
+        grid-template-areas: 'title icon' 'text text';
+        grid-row-gap: 1rem;
+    }
     &:link,
     &:visited {
         color: var(--text-color);
@@ -100,18 +135,36 @@
         background-color: rgba(#d49fe7, 0.2);
     }
 
-    .programs__list-item:nth-of-type(1) & {
-        border-radius: 10rem 2rem 2rem 2rem;
+
+    @include breakpointMF(small-tablet) {
+        .programs__list-item:nth-of-type(1) & {
+            border-radius: 10rem 2rem 2rem 2rem;
+        }
+        .programs__list-item:nth-of-type(2) & {
+            border-radius: 2rem 10rem 2rem 2rem;
+        }
+        .programs__list-item:nth-last-child(2) & {
+            border-radius: 2rem 2rem 2rem 10rem;
+        }
+        .programs__list-item:nth-last-child(1) & {
+            border-radius: 2rem 2rem 10rem 2rem;
+        }
     }
-    .programs__list-item:nth-of-type(2) & {
-        border-radius: 2rem 10rem 2rem 2rem;
+
+
+    @include breakpoint(mobile) {
+        .programs__list-item:nth-of-type(1) & {
+           border-top-left-radius: 2rem;
+           border-top-right-radius: 2rem;
+        }
+       
+        .programs__list-item:nth-last-child(1) & {
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+        }
     }
-    .programs__list-item:nth-last-child(2) & {
-        border-radius: 2rem 2rem 2rem 10rem;
-    }
-    .programs__list-item:nth-last-child(1) & {
-        border-radius: 2rem 2rem 10rem 2rem;
-    }
+
+   
 }
 
 .programs__card-title {
@@ -120,6 +173,11 @@
     font-size: 3.6rem;
     line-height: 1.2;
     grid-area: title;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        align-self: center;
+    }
 }
 
 .programs__card-text {
@@ -128,6 +186,11 @@
     font-size: 2rem;
     line-height: 2.6rem;
     grid-area: text;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
 }
 
 .programs__card-icon {
@@ -140,9 +203,19 @@
     height: 14rem;
     background: #ffffff;
 
+    @include breakpoint(mobile) {
+        width: 8rem;
+        height: 8rem;
+    }
+
     img {
         width: 12.5rem;
         height: 12.5rem;
         object-fit: contain;
+
+        @include breakpoint(mobile) {
+            width: 6rem;
+            height: 6rem;
+        }
     }
 }
