@@ -1,0 +1,201 @@
+.news-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    // z-index: 1;
+    // transition: z-index 0.2s step-end;
+    isolation: isolate;
+    // transition: z-index 0s linear .2s;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: -6rem;
+        background-color: #fff;
+        border-radius: 2rem;
+        box-shadow: 0px 3.2rem 5.6rem rgba(0, 0, 0, 0.06);
+        transition: opacity .3s;
+        opacity: 0;
+        z-index: -1;
+
+        @include breakpoint(mobile) {
+            bottom: 0;
+            opacity: 1;
+        }
+       
+       
+    }
+
+    .no-touch &:hover {
+        z-index: 1;
+        // z-index: 10;
+        // transition: z-index 0.3s step-start;
+        // transition: z-index .2s linear 0s;
+        &::before {
+            opacity: 1;
+        }
+
+        .news-card__btn {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity .3s, visibility .3s;
+        }
+    }
+}
+
+.news-card__image-container {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 60%;
+    }
+}
+
+.news-card__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-card__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    right: 2.4rem;
+    top: 2.4rem;
+    z-index: 5;
+    left: 2.4rem;
+    position: absolute;
+
+    @include breakpoint(mobile) {
+        right: 1.8rem;
+        top: 1.8rem;
+        left: 1.8rem;
+    }
+}
+
+.news-card__tag {
+    flex-shrink: 0;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 1.2rem;
+    background-color: #fff;
+    color: #424242;
+    background-color: #fff;
+    border-radius: 4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        padding: .5rem 1rem;
+        border-radius: 2rem;
+        gap: .4rem;
+    }
+
+    svg {
+        flex-shrink: 0;
+        width: 1.4rem;
+        height: 1.4rem;
+        fill: var(--primary-color);
+
+        @include breakpoint(mobile) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+}
+
+.news-card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1.4rem;
+
+    @include breakpoint(mobile) {
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.news-card__date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #939393;
+    margin-bottom: .7rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}
+
+.news-card__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.news-card__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}
+
+.news-card__btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: var(--primary-color);
+    position: absolute;
+    left: 2rem;
+    top: 100%;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity .3s, visibility 0s linear .3s;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+    
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+}
