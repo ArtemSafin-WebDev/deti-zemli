@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/styles.css" />
     <title>
-        Новости
+        
     </title>
 </head>
 
@@ -97,263 +97,372 @@
                     Главная
                 </a>
                 <a href="#">
-                    Новости
+                    Ярмарка добра
                 </a>
             </div>
-            <h1 class="standard-header__heading">
-                Новости
+            <h1 class="standard-header__heading standard-header__heading--with-heart">
+                Ярмарка добра
             </h1>
         </div>
     </div>
 </section>
 
-<section class="news-catalog">
+
+<section class="products-catalog">
     <div class="container">
-        <div class="news-catalog__grid">
-            <div class="news-catalog__inner">
-                <a href="#" class="news-catalog__selected-card">
-                    <div class="news-catalog__selected-card-content">
-                        <div class="news-catalog__selected-card-date">
-                            05 августа 2022
-                        </div>
-                        <h3 class="news-catalog__selected-card-title">
-                            Спасибо за июль!
-                        </h3>
-                        <div class="news-catalog__selected-card-text">
-                            Друзья, с радостью и благодарностью мы говорим спасибо всем, кто помогал нам в июле 2022
-                            года.
-                        </div>
-                        <div class="news-catalog__selected-card-btn">
-                            Читать подробнее
-                        </div>
+        <div class="products-catalog__grid">
+            <div class="products-catalog__inner">
+                <div class="products-catalog__top-row">
+
+
+                    <div class="standard-nav products-catalog__nav">
+                        <a href="#" class="standard-nav__link active">
+                            Все товары
+                        </a>
+                        <a href="#" class="standard-nav__link">
+                            Сделали дети
+                        </a>
+                        <a href="#" class="standard-nav__link">
+                            Продукция фонда
+                        </a>
                     </div>
-                    <div class="news-catalog__selected-card-image-container">
-                        <img src="img/news-catalog/1.jpg" alt="" class="news-catalog__selected-card-image">
-                    </div>
-                </a>
-                <ul class="news-catalog__list">
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/2.jpg" alt="" class="news-card__image lazyload">
-                                <div class="news-card__tags">
-                                    <div class="news-card__tag">
-                                        <svg width="14" height="14" aria-hidden="true" class="icon-soon">
-                                            <use xlink:href="#soon"></use>
-                                        </svg>
-                                        СКОРО
+
+                    <form action="/" method="GET" class="products-catalog__filters">
+                        <div class="products-catalog__filters-select">
+                            <div class="products-catalog__filters-select-wrapper">
+                                <select name="type" class="js-custom-select">
+                                    <option value="1">Все товары</option>
+                                    <option value="2">Категория 1</option>
+                                    <option value="3">Категория 2</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="products-catalog__filters-select">
+                            <svg width="14" height="14" aria-hidden="true" class="icon-download">
+                                <use xlink:href="#sort"></use>
+                            </svg>
+
+                            <div class="products-catalog__filters-select-wrapper">
+
+                                <select name="sort" class="js-custom-select">
+                                    <option value="1">Цена по возрастанию</option>
+                                    <option value="2">Цена по убыванию</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="products-catalog__list">
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/1.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю
+                                    энергию
+                                </div>
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1000 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
                                     </div>
                                 </div>
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
-                                </div>
-                                <h3 class="news-card__title">
-                                    Сдать кровь в выходные июля
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/3.jpg" alt="" class="news-card__image lazyload">
 
-                            </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
-                                </div>
-                                <h3 class="news-card__title">
-                                    СтОит помогАть: «Уроки добра» - 2022
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
-                                </div>
-                            </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/4.jpg" alt="" class="news-card__image lazyload">
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/2.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
 
-                            </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю
+                                    энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Футбол помогает
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/5.jpg" alt="" class="news-card__image lazyload">
-                                <div class="news-card__tags">
-                                    <div class="news-card__tag">
-                                        <svg width="14" height="14" aria-hidden="true" class="icon-soon">
-                                            <use xlink:href="#soon"></use>
-                                        </svg>
-                                        СКОРО
+
+
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
                                     </div>
                                 </div>
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                        </a>
+                    </li>
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/3.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю
+                                    энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Отчет за июнь
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/6.jpg" alt="" class="news-card__image lazyload">
-
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/4.jpg" alt="" class="products__slider-card-image lazyload">
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю
+                                    энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Спасибо за июнь
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1200 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/7.jpg" alt="" class="news-card__image lazyload">
-
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/5.jpg" alt="" class="products__slider-card-image lazyload">
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Отчет за май
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1000 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/8.jpg" alt="" class="news-card__image lazyload">
-
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/6.jpg" alt="" class="products__slider-card-image lazyload">
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Благотворительный день на катке ВДНХ
-                                </h3>
-                                <div class="news-card__text">
-                                    Восьмой благотворительный день на катке ВДНХ
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/9.jpg" alt="" class="news-card__image lazyload">
-
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/7.jpg" alt="" class="products__slider-card-image lazyload">
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Сдать кровь в выходные июля
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
-                                </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="news-catalog__list-item">
-                        <a href="#" class="news-card">
-                            <div class="news-card__image-container">
-                                <img data-src="img/news-catalog/10.jpg" alt="" class="news-card__image lazyload">
-
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/8.jpg" alt="" class="products__slider-card-image lazyload">
                             </div>
-                            <div class="news-card__content">
-                                <div class="news-card__date">
-                                    21 июня 2022
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
                                 </div>
-                                <h3 class="news-card__title">
-                                    Спасибо за ноябрь
-                                </h3>
-                                <div class="news-card__text">
-                                    Дорогие доноры, в июле вас традиционно ждут в трех отделениях переливания крови:
-                                    МосОблСПК, ГКБ № 52 и Центре Бакулева.
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1200 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
-                                <div class="news-card__btn">
-                                    Читать подробнее
+                            </div>
+                        </a>
+                    </li>
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/9.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
+                                </div>
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1000 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/10.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
+                                </div>
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/11.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
+                                </div>
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        800 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="products-catalog__list-item">
+                        <a href="#" class="products__slider-card">
+                            <div class="products__slider-card-image-container">
+                                <img data-src="img/products/12.jpg" alt="" class="products__slider-card-image lazyload">
+                            </div>
+                            <div class="products__slider-card-content">
+
+
+                                <h4 class="products__slider-card-title">
+                                    Ловец снов Золотое Солнце
+                                </h4>
+                                <div class="products__slider-card-text">
+                                    Изящный оберег, который украсит ваш дом и обережет его внутреннюю энергию
+                                </div>
+                                <div class="products__slider-card-bottom-row">
+                                    <div class="products__slider-card-price">
+                                        1200 ₽
+                                    </div>
+                                    <div class="products__slider-card-buy">
+                                        Купить
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </li>
                 </ul>
-                <div class="standard-pagination news-catalog__pagination">
+                <div class="standard-pagination products-catalog__pagination">
                     <ul class="standard-pagination__list">
                         <li class="standard-pagination__list-item">
                             <a href="#" class="standard-pagination__link active">
@@ -395,7 +504,6 @@
         </div>
     </div>
 </section>
-
 
 
 
