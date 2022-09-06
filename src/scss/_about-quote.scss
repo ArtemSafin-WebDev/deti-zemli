@@ -1,0 +1,91 @@
+.about-quote {
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.about-quote__grid {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
+}
+
+.about-quote__inner {
+    display: flex;
+    flex-direction: column;
+    @include breakpointMF(small-tablet) {
+        grid-column: 3 / 15;
+    }
+}
+
+.about-quote__card {
+    background: #7daf70;
+    border-radius: 2rem;
+    color: white;
+    padding: 4rem;
+    padding-left: 10rem;
+    position: relative;
+    padding-right: 10rem;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        padding-left: 5rem;
+    }
+
+    &::after {
+        content: '“';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8rem;
+        line-height: 4.2rem;
+        font-family: var(--philosopher);
+        position: absolute;
+        color: rgba(white, 0.6);
+        left: 3rem;
+        top: 5.3rem;
+
+        @include breakpoint(mobile) {
+            font-size: 5rem;
+            left: 1.7rem;
+            top: 2.2rem;
+        }
+        
+    }
+}
+
+.about-quote__card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    font-family: var(--philosopher);
+    margin-bottom: 3rem;
+    max-width: 98rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+}
+
+.about-quote__card-author {
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-align: right;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+}

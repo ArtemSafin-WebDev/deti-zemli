@@ -388,7 +388,7 @@
     color: #424242;
     line-height: 1.2;
     padding: 2rem 3rem;
-    background: #ffe500;
+    background: var(--yellow-color);
     border-radius: 4rem;
     flex-shrink: 0;
     transition: color .2s, background-color .2s;
@@ -402,7 +402,7 @@
 
     .no-touch &:hover,
     .touch &:active {
-        background: #f5dc00;
+        background: var(--yellow-color-hover);
     }
 }
 

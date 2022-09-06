@@ -1,0 +1,109 @@
+.about-intro {
+    background: #f6f6f6;
+    background-image: url('../img/about-intro-flag.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 102rem auto;
+    padding: 10rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        background-size: 17rem auto;
+        padding-bottom: 7rem;
+    }
+}
+
+.about-intro__grid {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
+}
+
+.about-intro__inner {
+    @include breakpointMF(small-tablet) {
+        grid-column: 3 / 15;
+    }
+}
+
+.about-intro__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.5rem;
+    line-height: 5rem;
+    font-family: var(--philosopher);
+    margin-bottom: 8rem;
+    max-width: 85rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+}
+
+.about-intro__large-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin-bottom: 4.5rem;
+    max-width: 85rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+}
+
+.about-intro__activities-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 4.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+}
+
+.about-intro__activities-list-item {
+    padding: 2.2rem 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.2;
+    background: #7daf70;
+    border-radius: 6rem;
+    font-family: var(--philosopher);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: white;
+
+    @include breakpoint(mobile) {
+        padding: 1rem 1.6rem;
+        font-size: 1.6rem;
+        border-radius: 3rem;
+    }
+}
+
+.about-intro__small-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    max-width: 67rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+}
