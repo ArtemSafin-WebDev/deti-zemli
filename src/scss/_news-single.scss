@@ -1,0 +1,289 @@
+.news-single {
+    padding-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 4rem;
+    }
+}
+
+.news-single__grid {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
+}
+
+.news-single__inner {
+    @include breakpointMF(small-tablet) {
+        grid-column: 3 / 15;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+    }
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 5rem;
+    }
+}
+
+.news-single__main {
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 8;
+    }
+}
+
+.news-single__sidebar {
+    @include breakpointMF(small-tablet) {
+        grid-column: 9 / -1;
+    }
+}
+
+.news-single__preview-image {
+    display: block;
+    border-radius: 2rem;
+    margin-bottom: 7rem;
+    width: 100%;
+    height: auto;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.news-single__content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+        line-height: 1.5;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4.8rem;
+        line-height: 1.2;
+        font-family: var(--philosopher);
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+
+        @include breakpoint(mobile) {
+            font-size: 3.2rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 5rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 2rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 3.2rem;
+        margin-bottom: 5rem;
+
+        @include breakpoint(mobile) {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        & > li {
+            &::before {
+                content: ' — ';
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ol {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 3.2rem;
+        margin-bottom: 5rem;
+        @include breakpoint(mobile) {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        display: block;
+        border-radius: 2rem;
+        margin: 5rem 0;
+        width: 100%;
+
+        @include breakpoint(mobile) {
+            margin: 2rem 0;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.news-single__gratitude {
+    background: #f6f6f6;
+    border-radius: 2rem;
+    padding: 4rem;
+    position: relative;
+    color: var(--text-color);
+    padding-right: 22rem;
+    background-image: url('../img/news-gratitude-heart.svg');
+    background-size: 16rem auto;
+    background-repeat: no-repeat;
+    background-position: right 5rem bottom 2rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        background-size: 8rem auto;
+        background-position: right 1rem bottom 0;
+    }
+}
+
+.news-single__gratitude-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-family: var(--philosopher);
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    p {
+        margin-bottom: 2rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1.5rem;
+        }
+
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.news-single__gratitude-author {
+    margin-top: 3.5rem;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: #939393;
+
+    @include breakpoint(mobile) {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        padding-right: 7rem;
+    }
+}
+
+.news-single__other-news {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-single__other-news-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        align-items: flex-start;
+        margin-bottom: 3.5rem;
+        position: absolute;
+        align-self: flex-start;
+        &::before {
+            content: '';
+            height: 1.5rem;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-size: 100% 100%;
+            background-image: url('../img/news-heading-underline.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -1;
+            pointer-events: none;
+            user-select: none;
+
+        }
+    }
+}
+
+.news-single__other-news-slider {
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            grid-gap: 3.2rem;
+        }
+
+        
+    }
+
+    .swiper-slide {
+        @include breakpoint(mobile) {
+            width: 90%;
+            margin-right: 1.5rem;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
