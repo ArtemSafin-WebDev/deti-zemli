@@ -16,6 +16,8 @@
     --text-color: #424242;
     --jost: 'Jost', sans-serif;
     --philosopher: 'Philosopher', serif;
+    --blue: #3A88FD;
+    --blue-hover: #2b79ed;
 
 
     @include breakpoint(mobile) {

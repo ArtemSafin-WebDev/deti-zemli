@@ -114,6 +114,12 @@
         font-style: normal;
         color: var(--primary-color);
     }
+
+    .intro--new-year & {
+        em {  
+            color: var(--blue);
+        }
+    }
 }
 
 .intro__form {
@@ -203,6 +209,13 @@
             height: 1.3rem;
         }
     }
+
+
+    .intro--new-year & {
+        &::before {
+            background-image: url('../img/news-heading-underline-blue.svg');
+        }
+    }
 }
 
 .intro__form-type {
@@ -268,6 +281,12 @@
     background: #7daf70;
     color: white;
     cursor: default;
+
+    
+}
+
+.intro--new-year .intro__form-type-radio-input:checked ~ .intro__form-type-radio-content {
+    background: var(--blue);
 }
 
 .intro__form-amount {
@@ -326,6 +345,11 @@
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
+}
+
+.intro--new-year .intro__form-amount-checkbox-input:checked ~ .intro__form-amount-checkbox-content {
+    background: var(--blue);
+    border-color: var(--blue);
 }
 
 .intro__form-fields {
@@ -433,6 +457,10 @@
     background: #7daf70;
     border-radius: 0.4rem;
 
+    .intro--new-year & {
+        background: var(--blue);
+    }
+
     svg {
         width: 1.2rem;
         height: 0.9rem;
@@ -448,6 +476,19 @@
 
 
 .intro__link {
+
+    .intro--new-year & {
+        background: var(--blue);
+        color: white;
+        &:link,
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+            background: var(--blue-hover);
+        }
+    }
     @include breakpoint(mobile) {
         align-self: flex-start;
     }

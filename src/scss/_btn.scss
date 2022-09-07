@@ -70,5 +70,18 @@
         }
     }
 
+    &--blue {
+        background: var(--blue);
+        color: white;
+        &:link,
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+            background: var(--blue-hover);
+        }
+    }
+
    
 }
