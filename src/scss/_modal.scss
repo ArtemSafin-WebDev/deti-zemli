@@ -1,0 +1,581 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility 0s linear .4s;
+
+    .no-touch & {
+        @include customScrollbar();
+    }
+
+   
+
+    &:not(.active) {
+        right: calc(-1 * var(--sb-width, 0));
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .4s, visibility .4s;
+    }
+}
+
+.modal__grid {
+    padding-top: 17rem;
+    padding-bottom: 12rem;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    &::before {
+        content: '';
+        left: 62rem;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none;
+        width: 24rem;
+        height: 24rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../img/team-bears.svg');
+        background-position: center bottom;
+    }
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+        grid-gap: 2.4rem;
+        align-items: flex-start;
+    }
+}
+
+.modal__back-btn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    justify-self: flex-start;
+    color: rgba(#424242, 0.6);
+    margin-top: 1.3rem;
+    &:link,
+    &:visited {
+        color: rgba(#424242, 0.6);
+    }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 3;
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.modal__inner {
+    @include breakpointMF(small-tablet) {
+        grid-column: 3 / 15;
+    }
+}
+
+.modal__top-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+        align-items: flex-start;
+    }
+}
+
+.modal__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: var(--philosopher);
+
+    @include breakpoint(mobile) {
+        font-size: 3.5rem;
+    }
+}
+
+.modal__close {
+    flex-shrink: 0;
+    margin-left: auto;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    @include breakpoint(mobile) {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: var(--text-color);
+        transition: fill 0.2s;
+    }
+
+    &:hover {
+        svg {
+            fill: var(--primary-color);
+        }
+    }
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+
+    .parsley-errors-list.filled {
+        margin-top: 0.5rem;
+        font-size: 1.4rem;
+        color: red;
+    }
+}
+
+.modal__form-days {
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.modal__form-days-heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.modal__form-days-radios {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    row-gap: 1.25rem;
+
+    @include breakpoint(mobile) {
+        gap: 1.5rem;
+    }
+}
+
+.modal__form-days-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+
+    @include breakpoint(mobile) {
+        gap: .6rem;
+    }
+}
+
+.modal__form-days-radio-input {
+    display: none;
+}
+
+.modal__form-days-radio-mark {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border: 1px solid #cbcbcb;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    @include breakpoint(mobile) {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        @include breakpoint(mobile) {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+}
+
+.modal__form-days-radio-input:checked ~ .modal__form-days-radio-mark::before {
+    opacity: 1;
+}
+
+.modal__form-days-radio-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+}
+
+.modal__form-fields {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-gap: 2.4rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.modal__form-field {
+    grid-column: span 2;
+
+    &--long {
+        grid-column: span 3;
+    }
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+    }
+}
+
+.modal__form-input {
+    display: block;
+    width: 100%;
+    height: 6rem;
+    background: #f6f6f6;
+    border-radius: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--text-color);
+    padding: 0 2rem;
+
+    @include breakpoint(mobile) {
+        height: 5.5rem;
+        padding: 0 1.5rem;
+    }
+    @include placeholder {
+        color: rgba(#424242, 0.6);
+    }
+}
+
+.modal__form-field {
+    text-align: left;
+    display: block;
+    .choices {
+        margin-bottom: 0;
+        position: relative;
+        border-radius: 1.2rem;
+        background: transparent;
+        font-style: normal;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        color: #424242;
+    }
+
+    .choices.is-open {
+        z-index: 30;
+    }
+
+    .choices[data-type*='select-one'].is-open::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .choices[data-type*='select-one'] .choices__inner {
+        padding-bottom: 0rem;
+    }
+
+    .choices__inner {
+        background: transparent;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        padding: 0;
+        min-height: 6rem;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border-radius: 0 !important;
+        transition: border-color 0.2s;
+        border: none;
+        background: #f6f6f6;
+        border-radius: 1.2rem;
+
+        @include breakpoint(mobile) {
+            min-height: 5.5rem;
+           
+        }
+    }
+
+    .choices__list--single {
+        padding: 0 2rem;
+        padding-right: 5rem;
+
+        @include breakpoint(mobile) {
+            padding: 0 1.5rem;
+            padding-right: 5rem;
+        }
+    }
+
+    .choices[data-type*='select-one']:after {
+        border: none;
+        margin: 0;
+        left: auto;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml, %3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M15.88 9.29 12 13.17 8.12 9.29a.996.996 0 1 0-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41c-.39-.38-1.03-.39-1.42 0Z' fill='%23424242'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h24v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 2.4rem;
+        height: 2.4rem;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.3s;
+
+        @include breakpoint(mobile) {
+            right: 1.5rem;
+        }
+    }
+
+    .choices__placeholder {
+        color: rgba(#424242, 0.6);
+        opacity: 1;
+    }
+
+    .choices__list--dropdown {
+        word-break: initial;
+        border: none;
+        // border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--primary-color) !important;
+        color: var(--text-color);
+        border-radius: 1rem !important;
+        background: white;
+        box-shadow: none;
+        transition: opacity 0.3s, visibility 0s linear 0.3s;
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0;
+        margin-top: 1.2rem;
+        width: max-content;
+        max-width: none;
+        width: 100%;
+        left: 0;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+        }
+        &.is-active {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    }
+
+    &:first-child .choices__list--dropdown {
+        left: 0;
+        right: auto;
+    }
+
+    .choices__list--dropdown .choices__item {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 120%;
+        transition: background-color 0.2s, color 0.2s;
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+        }
+    }
+
+    .choices__list--dropdown .choices__item--selectable.choices__placeholder {
+        color: rgba(black, 0.4);
+    }
+    .choices__list--dropdown .choices__item--selectable.is-highlighted {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .choices__list--dropdown .choices__list {
+        max-height: 30rem;
+
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            background-color: white;
+            width: 0.6rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+        }
+
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        @include breakpoint(mobile) {
+            max-height: 22rem;
+        }
+    }
+}
+
+.modal__form-bottom-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+}
+
+.modal__form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 2rem 5rem;
+    color: var(--text-color);
+    border-radius: 4rem;
+    background-color: var(--yellow-color);
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        background-color: var(--yellow-color-hover);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        padding: 1.3rem 2.2rem;
+        order: 10;
+    }
+}
+
+.modal__form-policy {
+    width: 53.2rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.modal__form-policy-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal__form-policy-checkbox-input {
+    display: none;
+}
+
+.modal__form-policy-checkbox-mark {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.4rem;
+    background: #7daf70;
+    transition: background-color 0.2s;
+    svg {
+        opacity: 0;
+        width: 1.2rem;
+        height: 0.9rem;
+        fill: white;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+}
+
+.modal__form-policy-checkbox-input:checked ~ .modal__form-policy-checkbox-mark {
+   
+    svg {
+        opacity: 1;
+    }
+}
+
+.modal__form-policy-checkbox-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    width: 50%;
+    flex-grow: 1;
+    color: rgba(#424242, 0.6);
+    margin-top: 0.2rem;
+}

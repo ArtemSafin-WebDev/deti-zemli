@@ -57,9 +57,8 @@
             background: rgb(235, 235, 235);
         }
     }
-
     &--white {
-        background: #FFFFFF;
+        background: #FEFEFE;
         color: var(--text-color);
         &:link,
         &:visited {
@@ -67,7 +66,9 @@
         }
 
         &:hover {
-            background: rgb(221, 221, 221);
+            background: rgb(230, 230, 230);
         }
     }
+
+   
 }

@@ -3,11 +3,40 @@
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 120;
+    transition: background-color .2s;
 
     @include breakpoint(mobile) {
-        
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #e3e3e3;
+            z-index: 205;
+            opacity: 0;
+            transition: opacity .4s;
+        }
     }
+
+   
+
+    .modal-open &,
+    .mobile-menu-open & {
+        padding-right: var(--sb-width, 0);
+       
+    }
+
+    .modal-open & {
+        background-color: #fff;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
 }
 
 .page-header__row {
@@ -276,5 +305,19 @@
         &:hover {
             background: rgb(235, 235, 235);
         }
+    }
+}
+
+
+.modal-open .page-header__btn.btn--white {
+    background: #F6F6F6;
+    color: var(--text-color);
+    &:link,
+    &:visited {
+        color: var(--text-color);
+    }
+
+    &:hover {
+        background: rgb(235, 235, 235);
     }
 }

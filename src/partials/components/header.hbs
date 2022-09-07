@@ -22,7 +22,7 @@
                         </li>
                         <li class="page-header__menu-nav-list-item">
                             <a href="#" class="page-header__menu-nav-link">
-                               Наши программы
+                                Наши программы
                             </a>
                         </li>
                         <li class="page-header__menu-nav-list-item">
@@ -52,9 +52,15 @@
                     <a href="mailto:help@detizemlirus.com" class="page-header__email">help@detizemlirus.com</a>
                 </div>
                 <div class="page-header__btns">
-                    <a href="#" class="btn btn--small btn--grey page-header__btn">
+                    {{#if headerBtnWhite}}
+                    <a href="#volunteer-modal" class="btn btn--small btn--white page-header__btn">
                         Стать волонтером
                     </a>
+                    {{else}}
+                    <a href="#volunteer-modal" class="btn btn--small btn--grey page-header__btn">
+                        Стать волонтером
+                    </a>
+                    {{/if}}
                     <a href="#" class="btn btn--small page-header__btn">
                         Оказать помощь
                     </a>
