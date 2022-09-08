@@ -16,13 +16,17 @@
     --text-color: #424242;
     --jost: 'Jost', sans-serif;
     --philosopher: 'Philosopher', serif;
-    --blue: #3A88FD;
+    --blue: #3a88fd;
     --blue-hover: #2b79ed;
-
 
     @include breakpoint(mobile) {
         --content-padding: 2rem;
     }
+}
+
+.new-year {
+    --primary-color: #3a88fd;
+    --primary-color-hover: #2b79ed;
 }
 
 html {
@@ -34,7 +38,6 @@ html {
     @media screen and (max-width: 1920px) {
         font-size: clamp(4.2px, 0.52vw, 24px);
     }
-
 
     @include breakpoint(mobile) {
         font-size: 10px;

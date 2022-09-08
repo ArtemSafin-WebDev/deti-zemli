@@ -63,6 +63,13 @@
             height: 1.5rem;
         }
     }
+
+
+    .new-year & {
+        &::before {
+            background-image: url('../img/news-heading-underline-blue.svg');
+        }
+    }
 }
 
 .team__list {
